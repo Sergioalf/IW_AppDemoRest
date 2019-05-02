@@ -1,0 +1,29 @@
+{
+  "name": "iw_appdemorest",
+  "version": "1.0.0",
+  "description": "Proyecto demo de web apis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel-node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sergioalf/IW_AppDemoRest.git"
+  },
+  "author": "Sergio Alfaro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sergioalf/IW_AppDemoRest/issues"
+  },
+  "homepage": "https://github.com/Sergioalf/IW_AppDemoRest#readme",
+  "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.4.4",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.5"
+  }
+}
