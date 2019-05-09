@@ -27,7 +27,7 @@ exports.GetZonesList = async (req,res) => {
 
 exports.GetZone = async (req,res) => {
     const id = req.params.id;
-    await Cat_zonas.findById(id)
+    await Cat_zonas.findOne({IdZona: id})
     .then(data => {
         data == null ?
         SEND_INFO(res, "Nothing", "Zone not found", status.NOT_FOUND):
@@ -41,7 +41,7 @@ exports.GetZone = async (req,res) => {
 exports.PutZone = async (req,res) => {
     const id = req.params.id;
     const zona = req.body;
-    await Cat_zonas.findByIdAndUpdate(id, zona, {new: true})
+    await Cat_zonas.findOneAndUpdate({IdZona: id}, zona, {new: true})
     .then(data => {
         data == null ?
         SEND_INFO(res, "Nothing", "Zone not found", status.NOT_FOUND):
@@ -54,7 +54,7 @@ exports.PutZone = async (req,res) => {
 
 exports.DeleteZone = async (req,res) => {
     const id = req.params.id;
-    await Cat_zonas.findByIdAndDelete(id)
+    await Cat_zonas.findOneAndDelete({IdZona:id})
     .then(data => {
         data == null ?
         SEND_INFO(res, "Nothing", "Zone not found", status.NOT_FOUND):

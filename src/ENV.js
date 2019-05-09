@@ -2,7 +2,8 @@ export const ENVIROMENT = {
     SERVER_PORT: process.env.PORT || 3001,
     BD_URL_CONNECTION: {
         TESTING: '',
-        DEVELOPING: "mongodb://localhost:27017/Demo",
+        CLOUD: "mongodb+srv://admin:admin@cluster0-23gn0.mongodb.net/test?retryWrites=true",
+        LOCAL: "mongodb://localhost:27017/Demo",
         PRODUCTION: ''
     },
     ROUTER_MAIN_MODULES: {
@@ -15,6 +16,16 @@ export const ENVIROMENT = {
                 GET_ZONE: '/getzone/:id',
                 PUT_ZONE: '/putzone/:id',
                 DELETE_ZONE: '/deletezone/:id'
+            }
+        },
+        ACTIVIDADES_APRENDIZAJE: {
+            NAME_ROUTE: '/actividades_aprendizaje',
+            ACTIONS: {
+                POST_ACTIVIDAD: '/',
+                GET_ACTIVIDADES_LIST: '/',
+                GET_ACTIVIDAD: '/:id',
+                PUT_ACTIVIDAD: '/:id',
+                DELETE_ACTIVIDAD: '/:id'
             }
         }
     }

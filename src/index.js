@@ -5,6 +5,7 @@ import { ENVIROMENT, SEND_INFO} from './ENV';
 import status from 'http-status';
 import { toASCII } from 'punycode';
 import routesEvents from './routes/events.route'
+import routerActividadesAprendizaje from './routes/actividades_aprendizaje.route'
 
 var allowCrossDomain = (req,res,next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -23,7 +24,7 @@ app.listen(ENVIROMENT.SERVER_PORT, async () => {
     try {
         app.use(allowCrossDomain);
         console.log('¡Successful connection ExpressJS!\n');
-        mongoose.connect(ENVIROMENT.BD_URL_CONNECTION.DEVELOPING, {useNewUrlParser: true})
+        mongoose.connect(ENVIROMENT.BD_URL_CONNECTION.LOCAL, {useNewUrlParser: true})
         .then(() => {
             console.log('¡Successful connection MongoDb!\n');
             app.get(ENVIROMENT.ROUTER_MAIN_MODULES.INDEX, (req,res) => {
@@ -32,6 +33,7 @@ app.listen(ENVIROMENT.SERVER_PORT, async () => {
                 res.end();
             });
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.EVENTS.NAME_ROUTE, routesEvents);
+            app.use(ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.NAME_ROUTE, routerActividadesAprendizaje);
         })
         .catch(err => {
             app.get(ENVIROMENT.ROUTER_MAIN_MODULES.INDEX, (req,res) => {
