@@ -67,6 +67,16 @@ export const ENVIROMENT = {
                 PUT: '/:id',
                 DELETE: '/:id'
             }
+        },
+        APOYOS_DIDACTICOS: {
+            NAME_ROUTE: '/apoyos_didacticos',
+            ACTIONS: {
+                POST: '/',
+                GET_LIST: '/',
+                GET: '/:id',
+                PUT: '/:id',
+                DELETE: '/:id'
+            }
         }
     }
 }
