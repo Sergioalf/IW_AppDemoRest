@@ -4,6 +4,8 @@ import mongoose from 'mongoose';
 import { ENVIROMENT, SEND_INFO} from './ENV';
 import status from 'http-status';
 import { toASCII } from 'punycode';
+
+// Routers
 import routesEvents from './routes/events.route'
 import routerActividadesAprendizaje from './routes/actividades_aprendizaje.route'
 import routerActividadesEnsenanza from './routes/actividades_ensenanza.route'
@@ -11,6 +13,8 @@ import routerActividadesRubricasCriterios from './routes/actividades_rubricas_cr
 import routerActividadesRubricasCriteriosDominios from './routes/actividades_rubricas_criterios_dominios.route'
 import routerFuentesbibliograficas from './routes/fuentes_bibliograficas.route'
 import routerApoyosDidacticos from './routes/apoyos_didacticos.route'
+import routerIndcadores from './routes/indicadores.route'
+
 
 var allowCrossDomain = (req,res,next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -44,6 +48,7 @@ app.listen(ENVIROMENT.SERVER_PORT, async () => {
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_RUBRICAS_CRITERIOS_DOMINIOS.NAME_ROUTE, routerActividadesRubricasCriteriosDominios);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.FUENTES_BIBLIOGRAFICAS.NAME_ROUTE,routerFuentesbibliograficas);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.APOYOS_DIDACTICOS.NAME_ROUTE, routerApoyosDidacticos);
+            app.use(ENVIROMENT.ROUTER_MAIN_MODULES.INDICADORES.NAME_ROUTE, routerIndcadores);
         })
         .catch(err => {
             app.get(ENVIROMENT.ROUTER_MAIN_MODULES.INDEX, (req,res) => {
