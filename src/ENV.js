@@ -87,6 +87,16 @@ export const ENVIROMENT = {
                 PUT: '/:id',
                 DELETE: '/:id'
             }
+        },
+        NIVELES_GRADOS_COMPETENCIAS: {
+            NAME_ROUTE: '/niveles_grados_competencias',
+            ACTIONS: {
+                POST: '/',
+                GET_LIST: '/',
+                GET: '/:id',
+                PUT: '/:id',
+                DELETE: '/:id'
+            }
         }
     }
 }
