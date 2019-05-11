@@ -1,37 +1,38 @@
 import express from 'express';
 import {ENVIROMENT} from '../ENV';
 import {
-    PostActividadAprendizaje, 
-    GetActividadesAprendizajeList, 
-    GetActividadAprendizaje, 
-    PutActividadAprendizaje,
-    DeleteActividadAprendizaje
+    Post, 
+    GetList, 
+    Get, 
+    Put,
+    Delete
 } from '../controllers/actividades_aprendizaje.controller';
 
 const router = express.Router();
 
 router.post(
-    ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.POST_ACTIVIDAD, 
-    PostActividadAprendizaje
+    ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.POST, 
+    Post
 );
 
 router.get(
-    ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.GET_ACTIVIDADES_LIST, 
-    GetActividadesAprendizajeList
+    ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.GET_LIST, 
+    GetList
 );
 
 router.get(
-    ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.GET_ACTIVIDAD, 
-    GetActividadAprendizaje
+    ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.GET, 
+    Get
 );
 
 router.put(
-    ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.PUT_ACTIVIDAD, 
-    PutActividadAprendizaje
+    ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.PUT, 
+    Put
 );
 
-router.delete(ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.DELETE_ACTIVIDAD,
-    DeleteActividadAprendizaje
+router.delete(
+    ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.DELETE,
+    Delete
 );
 
 module.exports = router;

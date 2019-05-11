@@ -21,21 +21,31 @@ export const ENVIROMENT = {
         ACTIVIDADES_APRENDIZAJE: {
             NAME_ROUTE: '/actividades_aprendizaje',
             ACTIONS: {
-                POST_ACTIVIDAD: '/',
-                GET_ACTIVIDADES_LIST: '/',
-                GET_ACTIVIDAD: '/:id',
-                PUT_ACTIVIDAD: '/:id',
-                DELETE_ACTIVIDAD: '/:id'
+                POST: '/',
+                GET_LIST: '/',
+                GET: '/:id',
+                PUT: '/:id',
+                DELETE: '/:id'
             }
         },
         ACTIVIDADES_ENSENANZA: {
             NAME_ROUTE: '/actividades_ensenanza',
             ACTIONS: {
-                POST_ACTIVIDAD: '/',
-                GET_ACTIVIDADES_LIST: '/',
-                GET_ACTIVIDAD: '/:id',
-                PUT_ACTIVIDAD: '/:id',
-                DELETE_ACTIVIDAD: '/:id'
+                POST: '/',
+                GET_LIST: '/',
+                GET: '/:id',
+                PUT: '/:id',
+                DELETE: '/:id'
+            }
+        },
+        ACTIVIDADES_RUBRICAS_CRITERIOS: {
+            NAME_ROUTE: '/actividades_rubricas_criterios',
+            ACTIONS: {
+                POST: '/',
+                GET_LIST: '/',
+                GET: '/:id',
+                PUT: '/:id',
+                DELETE: '/:id'
             }
         }
     }
@@ -105,7 +115,7 @@ export const POST = async (res,bd,name,vowel,body) => {
     });
 };
 
-export const GET_ALL = async (res,bd,name,vowel) => {
+export const GET_LIST = async (res,bd,name,vowel) => {
     await bd.find()
     .then(data => {
         data.length == 0 ? 

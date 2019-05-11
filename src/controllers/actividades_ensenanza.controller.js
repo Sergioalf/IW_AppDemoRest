@@ -1,4 +1,4 @@
-import {FORMATS_FOR_DATE_AND_TIME, POST, GET_ALL, GET, PUT, DELETE} from '../ENV';
+import {FORMATS_FOR_DATE_AND_TIME, POST, GET_LIST, GET, PUT, DELETE} from '../ENV';
 import actividades_ensenanza from '../models/actividades_ensenanza.model';
 
 const bd = actividades_ensenanza;
@@ -10,23 +10,23 @@ const name = [
 ]; 
 const vowel = 'a';
 
-exports.PostActividadEnsenanza = (req,res) => {
+exports.Post = (req,res) => {
     POST(res,bd,name,vowel,req.body);
 };
 
-exports.GetActividadesEnsenanzaList = (req,res) => {
-    GET_ALL(res,bd,name,vowel);
+exports.GetList = (req,res) => {
+    GET_LIST(res,bd,name,vowel);
 };
 
-exports.GetActividadEnsenanza = async (req,res) => {
+exports.Get = async (req,res) => {
     GET(res,bd,name,vowel,{IdActividadEnsenanza: req.params.id});
 };
 
-exports.PutActividadEnsenanza = async (req,res) => {
+exports.Put = async (req,res) => {
     req.body.FechaUltMod = FORMATS_FOR_DATE_AND_TIME().DATE_UTC;
     PUT(res,bd,name,vowel,{IdActividadEnsenanza: req.params.id},req.body);
 };
 
-exports.DeleteActividadEnsenanza = async (req,res) => {
+exports.Delete = async (req,res) => {
     DELETE(res,bd,name,vowel,{IdActividadEnsenanza: req.params.id});
 };
