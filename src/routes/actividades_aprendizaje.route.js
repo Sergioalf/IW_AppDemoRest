@@ -1,7 +1,7 @@
 import express from 'express';
 import {ENVIROMENT} from '../ENV';
 import {
-    PostActivitadAprendizaje, 
+    PostActividadAprendizaje, 
     GetActividadesAprendizajeList, 
     GetActividadAprendizaje, 
     PutActividadAprendizaje,
@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.post(
     ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.POST_ACTIVIDAD, 
-    PostActivitadAprendizaje
+    PostActividadAprendizaje
 );
 
 router.get(
@@ -26,7 +26,9 @@ router.get(
 );
 
 router.put(
-    ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.PUT_ACTIVIDAD, PutActividadAprendizaje);
+    ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.PUT_ACTIVIDAD, 
+    PutActividadAprendizaje
+);
 
 router.delete(ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.ACTIONS.DELETE_ACTIVIDAD,
     DeleteActividadAprendizaje

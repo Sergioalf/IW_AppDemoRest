@@ -27,6 +27,16 @@ export const ENVIROMENT = {
                 PUT_ACTIVIDAD: '/:id',
                 DELETE_ACTIVIDAD: '/:id'
             }
+        },
+        ACTIVIDADES_ENSENANZA: {
+            NAME_ROUTE: '/actividades_ensenanza',
+            ACTIONS: {
+                POST_ACTIVIDAD: '/',
+                GET_ACTIVIDADES_LIST: '/',
+                GET_ACTIVIDAD: '/:id',
+                PUT_ACTIVIDAD: '/:id',
+                DELETE_ACTIVIDAD: '/:id'
+            }
         }
     }
 }
@@ -83,7 +93,67 @@ export const GET_TYPE_ASSISTANCE = () => {
     return null;
 };
 
-export const SEND_INFO = (res, data, message, code) => {
+import status from 'http-status';
+
+export const POST = async (res,bd,name,vowel,body) => {
+    await bd.create(body)
+    .then(data => {
+        SEND_INFO(res, data, `${name[0]} insertad${vowel} exitósamente`, status.CREATED);
+    })
+    .catch(err => {
+        SEND_INFO(res, err, `${name[0]} no pudo ser insertad${vowel}`, status.INTERNAL_SERVER_ERROR);
+    });
+};
+
+export const GET_ALL = async (res,bd,name,vowel) => {
+    await bd.find()
+    .then(data => {
+        data.length == 0 ? 
+        SEND_INFO(res, 'Nada', `No se encontraron ${name[3]}`, status.NOT_FOUND):
+        SEND_INFO(res, data, `${name[1]} recuperad${vowel}s exitósamente`, status.OK);
+    })
+    .catch(err => {
+        SEND_INFO(res, err, `${name[1]} no pudieron ser recuperad${vowle}s`, status.INTERNAL_SERVER_ERROR);
+    });
+};
+
+export const GET = async (res,bd,name,vowel,condition) => {
+    await bd.findOne(condition)
+    .then(data => {
+        data == null ?
+        SEND_INFO(res, 'Nada', `No se encontró ${name[2]}`, status.NOT_FOUND):
+        SEND_INFO(res, data, `${name[0]} recuperad${vowel} exitósamente`, status.OK);
+    })
+    .catch(err => {
+        SEND_INFO(res, err, `${name[0]} no pudo ser recuperad${vowel}`, status.INTERNAL_SERVER_ERROR);
+    });
+}
+
+export const PUT = async (res,bd,name,vowel,condition,body) => {
+    await bd.findOneAndUpdate(condition, body, {new: true})
+    .then(data => {
+        data == null ?
+        SEND_INFO(res, 'Nada', `No se encontró ${name[2]}`, status.NOT_FOUND):
+        SEND_INFO(res, data, `${name[0]} actualizad${vowel} exitósamente`, status.OK);
+    })
+    .catch(err => {
+        SEND_INFO(res, err, `${name[0]} no pudo ser actualizad${vowel}`, status.INTERNAL_SERVER_ERROR);
+    });
+};
+
+export const DELETE = async (res,bd,name,vowel,condition) => {
+    await bd.findOneAndDelete(condition)
+    .then(data => {
+        data == null ?
+        SEND_INFO(res, 'Nada', `No se encontró ${name[2]}`, status.NOT_FOUND):
+        SEND_INFO(res, data, `${name[0]} eliminad${vowel} exitósamente`, status.OK);
+    })
+    .catch(err => {
+        SEND_INFO(res, err, `${name[0]} no pudo ser eliminad${vowel}`, status.INTERNAL_SERVER_ERROR);
+    });
+};
+
+const SEND_INFO = (res, data, message, code) => {
     console.log("code: " + code + "\nMessage: " + message + "\n");
     res.status(code);
     res.json({
