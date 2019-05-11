@@ -6,15 +6,16 @@ import status from 'http-status';
 import { toASCII } from 'punycode';
 
 // Routers
-import routesEvents from './routes/events.route'
-import routerActividadesAprendizaje from './routes/actividades_aprendizaje.route'
-import routerActividadesEnsenanza from './routes/actividades_ensenanza.route'
-import routerActividadesRubricasCriterios from './routes/actividades_rubricas_criterios.route'
-import routerActividadesRubricasCriteriosDominios from './routes/actividades_rubricas_criterios_dominios.route'
-import routerFuentesbibliograficas from './routes/fuentes_bibliograficas.route'
-import routerApoyosDidacticos from './routes/apoyos_didacticos.route'
-import routerIndcadores from './routes/indicadores.route'
-import routerNivelesGradosCompetencias from './routes/niveles_grados_competencias.route'
+import routesEvents from './routes/events.route';
+import routerActividadesAprendizaje from './routes/actividades_aprendizaje.route';
+import routerActividadesEnsenanza from './routes/actividades_ensenanza.route';
+import routerActividadesRubricasCriterios from './routes/actividades_rubricas_criterios.route';
+import routerActividadesRubricasCriteriosDominios from './routes/actividades_rubricas_criterios_dominios.route';
+import routerFuentesbibliograficas from './routes/fuentes_bibliograficas.route';
+import routerApoyosDidacticos from './routes/apoyos_didacticos.route';
+import routerIndcadores from './routes/indicadores.route';
+import routerNivelesGradosCompetencias from './routes/niveles_grados_competencias.route';
+import routerAlumnos from './routes/alumnos.route';
 
 
 var allowCrossDomain = (req,res,next) => {
@@ -51,6 +52,7 @@ app.listen(ENVIROMENT.SERVER_PORT, async () => {
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.APOYOS_DIDACTICOS.NAME_ROUTE, routerApoyosDidacticos);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.INDICADORES.NAME_ROUTE, routerIndcadores);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.NIVELES_GRADOS_COMPETENCIAS.NAME_ROUTE, routerNivelesGradosCompetencias);
+            app.use(ENVIROMENT.ROUTER_MAIN_MODULES.ALUMNOS.NAME_ROUTE, routerAlumnos);
         })
         .catch(err => {
             app.get(ENVIROMENT.ROUTER_MAIN_MODULES.INDEX, (req,res) => {

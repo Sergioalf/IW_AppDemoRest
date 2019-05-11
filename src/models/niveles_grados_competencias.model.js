@@ -15,5 +15,5 @@ module.exports = mongoose.model('eva_cat_niveles_grados_competencias', new Schem
     FechaReg: {type: String, default: FORMATS_FOR_DATE_AND_TIME().DATE_UTC},
     UsuarioReg: {type: String, default: 'REST'},
     FechaUltMod: {type: String, default: ''},
-    UsuarioMod: {type: String, default: ''},
+    UsuarioMod: {type: String, default: ''}
 }));

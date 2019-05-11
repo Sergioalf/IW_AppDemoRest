@@ -12,5 +12,5 @@ module.exports = mongoose.model('eva_cat_apoyos_didacticos', new Schema({
     FechaReg: {type: String, default: FORMATS_FOR_DATE_AND_TIME().DATE_UTC},
     UsuarioReg: {type: String, default: 'REST'},
     FechaUltMod: {type: String, default: ''},
-    UsuarioMod: {type: String, default: ''},
+    UsuarioMod: {type: String, default: ''}
 }));

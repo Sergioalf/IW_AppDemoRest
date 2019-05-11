@@ -97,6 +97,16 @@ export const ENVIROMENT = {
                 PUT: '/:id',
                 DELETE: '/:id'
             }
+        },
+        ALUMNOS: {
+            NAME_ROUTE: '/alumnos',
+            ACTIONS: {
+                POST: '/',
+                GET_LIST: '/',
+                GET: '/:id',
+                PUT: '/:id',
+                DELETE: '/:id'
+            }
         }
     }
 }
@@ -213,7 +223,7 @@ export const DELETE = async (res,bd,name,vowel,condition) => {
     });
 };
 
-const SEND_INFO = (res, data, message, code) => {
+export const SEND_INFO = (res, data, message, code) => {
     console.log("code: " + code + "\nMessage: " + message + "\n");
     res.status(code);
     res.json({
