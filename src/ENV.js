@@ -47,6 +47,16 @@ export const ENVIROMENT = {
                 PUT: '/:id',
                 DELETE: '/:id'
             }
+        },
+        ACTIVIDADES_RUBRICAS_CRITERIOS_DOMINIOS: {
+            NAME_ROUTE: '/actividades_rubricas_criterios_dominios',
+            ACTIONS: {
+                POST: '/',
+                GET_LIST: '/',
+                GET: '/:id',
+                PUT: '/:id',
+                DELETE: '/:id'
+            }
         }
     }
 }

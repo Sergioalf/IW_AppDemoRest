@@ -8,6 +8,7 @@ import routesEvents from './routes/events.route'
 import routerActividadesAprendizaje from './routes/actividades_aprendizaje.route'
 import routerActividadesEnsenanza from './routes/actividades_ensenanza.route'
 import routerActividadesRubricasCriterios from './routes/actividades_rubricas_criterios.route'
+import routerActividadesRubricasCriteriosDominios from './routes/actividades_rubricas_criterios_dominios.route'
 
 var allowCrossDomain = (req,res,next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -38,6 +39,7 @@ app.listen(ENVIROMENT.SERVER_PORT, async () => {
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_APRENDIZAJE.NAME_ROUTE, routerActividadesAprendizaje);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_ENSENANZA.NAME_ROUTE, routerActividadesEnsenanza);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_RUBRICAS_CRITERIOS.NAME_ROUTE, routerActividadesRubricasCriterios);
+            app.use(ENVIROMENT.ROUTER_MAIN_MODULES.ACTIVIDADES_RUBRICAS_CRITERIOS_DOMINIOS.NAME_ROUTE, routerActividadesRubricasCriteriosDominios);
         })
         .catch(err => {
             app.get(ENVIROMENT.ROUTER_MAIN_MODULES.INDEX, (req,res) => {
