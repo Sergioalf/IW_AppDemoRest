@@ -8,7 +8,7 @@ module.exports = mongoose.model('eva_cat_indicadores', new Schema({
     ClaveCarrera: {type: String, default: ''},
     ClaveOficial: {type: String, default: ''},
     DesCarrera: {type: String, default: ''},
-    NombreCarta: {type: String, default: ''},
+    NombreCorta: {type: String, default: ''},
     Alias: {type: String, default: ''},
     TipoGradoEscolar: {type: String, required: true},
     TipoModalidad: {type: String, required: true},

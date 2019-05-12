@@ -127,6 +127,16 @@ export const ENVIROMENT = {
                 PUT: '/:id',
                 DELETE: '/:id'
             }
+        },
+        ASIGNATURAS: {
+            NAME_ROUTE: '/asignaturas',
+            ACTIONS: {
+                POST: '/',
+                GET_LIST: '/',
+                GET: '/:id',
+                PUT: '/:id',
+                DELETE: '/:id'
+            }
         }
     }
 }
