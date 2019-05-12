@@ -16,6 +16,7 @@ import routerApoyosDidacticos from './routes/apoyos_didacticos.route';
 import routerIndcadores from './routes/indicadores.route';
 import routerNivelesGradosCompetencias from './routes/niveles_grados_competencias.route';
 import routerAlumnos from './routes/alumnos.route';
+import routerEspecialidades from './routes/especialidades.route'
 
 
 var allowCrossDomain = (req,res,next) => {
@@ -53,6 +54,7 @@ app.listen(ENVIROMENT.SERVER_PORT, async () => {
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.INDICADORES.NAME_ROUTE, routerIndcadores);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.NIVELES_GRADOS_COMPETENCIAS.NAME_ROUTE, routerNivelesGradosCompetencias);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.ALUMNOS.NAME_ROUTE, routerAlumnos);
+            app.use(ENVIROMENT.ROUTER_MAIN_MODULES.ESPECIALIDADES.NAME_ROUTE, routerEspecialidades);
         })
         .catch(err => {
             app.get(ENVIROMENT.ROUTER_MAIN_MODULES.INDEX, (req,res) => {
