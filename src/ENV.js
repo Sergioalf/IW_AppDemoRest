@@ -117,6 +117,16 @@ export const ENVIROMENT = {
                 PUT: '/:id',
                 DELETE: '/:id'
             }
+        },
+        RETICULAS: {
+            NAME_ROUTE: '/reticulas',
+            ACTIONS: {
+                POST: '/',
+                GET_LIST: '/',
+                GET: '/:id',
+                PUT: '/:id',
+                DELETE: '/:id'
+            }
         }
     }
 }
