@@ -19,6 +19,7 @@ import routerAlumnos from './routes/alumnos.route';
 import routerEspecialidades from './routes/especialidades.route'
 import routerReticulas from './routes/reticulas.route'
 import routerAsignaturas from './routes/asignaturas.route'
+import routerPersonas from './routes/personas.route'
 
 
 var allowCrossDomain = (req,res,next) => {
@@ -59,6 +60,7 @@ app.listen(ENVIROMENT.SERVER_PORT, async () => {
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.ESPECIALIDADES.NAME_ROUTE, routerEspecialidades);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.RETICULAS.NAME_ROUTE, routerReticulas);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.ASIGNATURAS.NAME_ROUTE, routerAsignaturas);
+            app.use(ENVIROMENT.ROUTER_MAIN_MODULES.PERSONAS.NAME_ROUTE, routerPersonas);
         })
         .catch(err => {
             app.get(ENVIROMENT.ROUTER_MAIN_MODULES.INDEX, (req,res) => {
