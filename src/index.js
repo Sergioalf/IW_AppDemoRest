@@ -45,6 +45,7 @@ app.listen(ENVIROMENT.SERVER_PORT, async () => {
         console.log('¡Successful connection ExpressJS!\n');
         mongoose.connect(ENVIROMENT.BD_URL_CONNECTION.LOCAL, {useNewUrlParser: true})
         .then(() => {
+            mongoose.set('useFindAndModify', false);
             console.log('¡Successful connection MongoDb!\n');
             app.get(ENVIROMENT.ROUTER_MAIN_MODULES.INDEX, (req,res) => {
                 SEND_INFO(res, "It's working!", "Server working successfully", status.OK);
@@ -68,7 +69,7 @@ app.listen(ENVIROMENT.SERVER_PORT, async () => {
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.RUBRICAS.NAME_ROUTE, routerRubricas);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.CARRERAS.NAME_ROUTE, routerCarreras);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.TIPO_ESTATUS.NAME_ROUTE, routerTipoEstatus);
-            app.use(ENVIROMENT.ROUTER_MAIN_MODULES.TIPOS_GENERALES,NAME_ROUTE, routerTiposGenerales);
+            app.use(ENVIROMENT.ROUTER_MAIN_MODULES.TIPOS_GENERALES.NAME_ROUTE, routerTiposGenerales);
         })
         .catch(err => {
             app.get(ENVIROMENT.ROUTER_MAIN_MODULES.INDEX, (req,res) => {
