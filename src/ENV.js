@@ -157,6 +157,16 @@ export const ENVIROMENT = {
                 PUT: '/:id',
                 DELETE: '/:id'
             }
+        },
+        CARRERAS: {
+            NAME_ROUTE: '/carreras',
+            ACTIONS: {
+                POST: '/',
+                GET_LIST: '/',
+                GET: '/:id',
+                PUT: '/:id',
+                DELETE: '/:id'
+            }
         }
     }
 }

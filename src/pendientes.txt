@@ -1,4 +1,4 @@
-rubricas
-carreras
-tipo_estatus
-tipos_generales
+rubricas**
+carreras*
+tipo_estatus**
+tipos_generales**

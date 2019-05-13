@@ -3,7 +3,7 @@ import { ENVIROMENT, FORMATS_FOR_DATE_AND_TIME } from '../ENV';
 
 const Schema = mongoose.Schema;
 
-module.exports = mongoose.model('eva_cat_indicadores', new Schema({
+module.exports = mongoose.model('eva_cat_carreras', new Schema({
     IdCarrera: {type: Number, required: true},
     ClaveCarrera: {type: String, default: ''},
     ClaveOficial: {type: String, default: ''},
