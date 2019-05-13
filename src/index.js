@@ -22,6 +22,7 @@ import routerAsignaturas from './routes/asignaturas.route';
 import routerPersonas from './routes/personas.route';
 import routerRubricas from './routes/rubricas.route';
 import routerCarreras from './routes/carreras.route';
+import routerTipoEstatus from './routes/tipo_estatus.route';
 
 
 var allowCrossDomain = (req,res,next) => {
@@ -65,6 +66,7 @@ app.listen(ENVIROMENT.SERVER_PORT, async () => {
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.PERSONAS.NAME_ROUTE, routerPersonas);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.RUBRICAS.NAME_ROUTE, routerRubricas);
             app.use(ENVIROMENT.ROUTER_MAIN_MODULES.CARRERAS.NAME_ROUTE, routerCarreras);
+            app.use(ENVIROMENT.ROUTER_MAIN_MODULES.TIPO_ESTATUS.NAME_ROUTE, routerTipoEstatus);
         })
         .catch(err => {
             app.get(ENVIROMENT.ROUTER_MAIN_MODULES.INDEX, (req,res) => {
