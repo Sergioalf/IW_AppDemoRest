@@ -21,7 +21,7 @@ module.exports = mongoose.model('eva_cat_carreras', new Schema({
     UsuarioReg: {type: String, default: 'REST'},
     FechaUltMod: {type: String, default: ''},
     UsuarioMod: {type: String, default: ''},
-    eva_cat_carreras_especialidades: [
+    eva_cat_carreras_especialidades_AS: [
         {
             eva_cat_carreras_especialidades: {type: String, required: true},
             IdEspecialidad: {type: Number, required: true},

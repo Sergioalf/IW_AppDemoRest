@@ -155,7 +155,11 @@ export const ENVIROMENT = {
                 GET_LIST: '/',
                 GET: '/:id',
                 PUT: '/:id',
-                DELETE: '/:id'
+                DELETE: '/:id',
+                POST_SUB: '/sub/:id',
+                GET_SUB: '/sub/:id/:idSub',
+                PUT_SUB: '/sub/:id/:idSub',
+                DELETE_SUB: '/sub/:id/:idSub'
             }
         },
         CARRERAS: {
@@ -165,7 +169,11 @@ export const ENVIROMENT = {
                 GET_LIST: '/',
                 GET: '/:id',
                 PUT: '/:id',
-                DELETE: '/:id'
+                DELETE: '/:id',
+                POST_SUB: '/sub/:id',
+                GET_SUB: '/sub/:id/:idSub',
+                PUT_SUB: '/sub/:id/:idSub',
+                DELETE_SUB: '/sub/:id/:idSub'
             }
         },
         TIPO_ESTATUS: {
@@ -175,7 +183,11 @@ export const ENVIROMENT = {
                 GET_LIST: '/',
                 GET: '/:id',
                 PUT: '/:id',
-                DELETE: '/:id'
+                DELETE: '/:id',
+                POST_SUB: '/sub/:id',
+                GET_SUB: '/sub/:id/:idSub',
+                PUT_SUB: '/sub/:id/:idSub',
+                DELETE_SUB: '/sub/:id/:idSub'
             }
         },
         TIPOS_GENERALES: {
@@ -185,7 +197,11 @@ export const ENVIROMENT = {
                 GET_LIST: '/',
                 GET: '/:id',
                 PUT: '/:id',
-                DELETE: '/:id'
+                DELETE: '/:id',
+                POST_SUB: '/sub/:id',
+                GET_SUB: '/sub/:id/:idSub',
+                PUT_SUB: '/sub/:id/:idSub',
+                DELETE_SUB: '/sub/:id/:idSub'
             }
         }
     }
@@ -267,8 +283,8 @@ export const GET_LIST = async (res,bd,name) => {
     });
 };
 
-export const GET = async (res,bd,name,condition) => {
-    await bd.findOne(condition)
+export const GET = async (res,bd,name,condition,extra={}) => {
+    await bd.findOne(condition,extra)
     .then(data => {
         data == null ?
         SEND_INFO(res, 'Nothing', `${name} not found!`, status.NOT_FOUND):
