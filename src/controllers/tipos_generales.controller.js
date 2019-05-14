@@ -26,3 +26,32 @@ exports.Put = async (req,res) => {
 exports.Delete = async (req,res) => {
     DELETE(res,bd,name[0],{IdTipoGeneral: req.params.id});
 };
+
+exports.PostSub = async (req,res) => {
+    PUT(res,bd,name[0],{IdTipoGeneral: req.params.id},{$push: {cat_generales_AS: req.body}});
+};
+
+exports.GetSub = async (req,res) => {
+    GET(res,bd,name[0],{IdTipoGeneral: req.params.id, 'cat_generales_AS.IdGeneral': req.params.idSub});
+};
+
+exports.PutSub = async (req,res) => {
+    PUT(res,bd,name[0],{
+        IdTipoGeneral: req.params.id, 'cat_generales_AS.IdGeneral': req.params.idSub
+    },
+    {
+        'cat_generales_AS.$.cat_generales':req.body.cat_generales,
+        'cat_generales_AS.$.IdGeneral':req.body.IdGeneral,
+        'cat_generales_AS.$.DesGeneral':req.body.DesGeneral,
+        'cat_generales_AS.$.Clave':req.body.Clave,
+        'cat_generales_AS.$.Referencia':req.body.Referencia,
+        'cat_generales_AS.$.Activo':req.body.Activo,
+        'cat_generales_AS.$.Borrado':req.body.Borrado,
+        'cat_generales_AS.$.UsuarioMod':req.body.UsuarioMod,
+        'cat_generales_AS.$.FechaUltMod': FORMATS_FOR_DATE_AND_TIME().DATE_UTC
+    });
+};
+
+exports.DeleteSub = async (req,res) => {
+    PUT(res,bd,name[0],{IdTipoGeneral: req.params.id},{$pull: {cat_generales_AS:{IdGeneral: req.params.idSub}}});
+};

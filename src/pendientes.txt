@@ -1,3 +1,2 @@
 rubricas*
-tipo_estatus*
 tipos_generales*
