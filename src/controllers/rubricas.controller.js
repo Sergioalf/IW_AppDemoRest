@@ -54,3 +54,39 @@ exports.PutSub = async (req,res) => {
 exports.DeleteSub = async (req,res) => {
     PUT(res,bd,name[0],{IdRubrica: req.params.id},{$pull: {eva_cat_rubricas_criterios_AS:{IdCriterioRubrica: req.params.idSub}}});
 };
+
+exports.PostSubSub = async (req,res) => {
+    PUT(res,bd,name[0],{
+            IdRubrica: req.params.id, 'eva_cat_rubricas_criterios_AS.IdCriterioRubrica': req.params.idSub
+        },
+        {
+            $push: {
+                'eva_cat_rubricas_criterios_AS.$.eva_nivel_dominio_criterio_rubricas_AS': req.body
+            }
+        }
+    );
+};
+
+exports.GetSubSub = async (req,res) => {
+    GET(res,bd,name[0],{
+        IdRubrica: req.params.id, 'eva_cat_rubricas_criterios_AS.IdCriterioRubrica': req.params.idSub, 'eva_cat_rubricas_criterios_AS.eva_nivel_dominio_criterio_rubricas_AS.IdNivelDominio': req.params.idSubSub
+    });
+};
+
+exports.PutSubSub = async (req,res) => {
+    PUT(res,bd,name[0],{
+        IdRubrica: req.params.id, 'eva_cat_rubricas_criterios_AS.IdCriterioRubrica': req.params.idSub, 'eva_cat_rubricas_criterios_AS.eva_nivel_dominio_criterio_rubricas_AS.IdNivelDominio': req.params.idSubSub
+    },
+    {
+        'eva_cat_rubricas_criterios_AS.$.eva_nivel_dominio_criterio_rubricas_AS.$.IdNivelDominio':100
+    });
+};
+
+exports.DeleteSubSub = async (req,res) => {
+    PUT(res,bd,name[0],{
+        IdRubrica: req.params.id, 'eva_cat_rubricas_criterios_AS.IdCriterioRubrica': req.params.idSub, 'eva_cat_rubricas_criterios_AS.eva_nivel_dominio_criterio_rubricas_AS.IdNivelDominio': req.params.idSubSub
+    },
+    {   
+        $pull: {eva_cat_rubricas_criterios_AS:{eva_nivel_dominio_criterio_rubricas_AS:{IdNivelDominio: req.params.idSubSub}}}
+    })
+};

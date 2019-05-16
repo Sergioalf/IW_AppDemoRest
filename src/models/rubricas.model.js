@@ -26,13 +26,13 @@ module.exports = mongoose.model('eva_cat_rubricas', new Schema({
             UsuarioReg: {type: String, default: 'REST'},
             FechaUltMod: {type: String, default: ''},
             UsuarioMod: {type: String, default: ''},
-            eva_nivel_dominio_criterioa_rubricas_AS:[
+            eva_nivel_dominio_criterio_rubricas_AS:[
                 {
-                    eva_nivel_dominio_criterioa_rubricas: {type: String, required:true},
-                    IdNivelDominio: {type: String, default: 0},
+                    eva_nivel_dominio_criterio_rubricas: {type: String, required:true},
+                    IdNivelDominio: {type: String, default: ''},
                     DesNivelDominio: {type: String, default: ''},
                     ValorPuntuacion: {type: Number, default: 0},
-                    Detalle: {type: String, default: 0},
+                    Detalle: {type: String, default: ''},
                     Activo: {type: String, default: 'S'},
                     Borrado: {type: String, default: 'N'},
                     FechaReg: {type: String, default: FORMATS_FOR_DATE_AND_TIME().DATE_UTC},

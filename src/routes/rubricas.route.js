@@ -9,7 +9,11 @@ import {
     PostSub,
     GetSub,
     PutSub,
-    DeleteSub
+    DeleteSub,
+    PostSubSub,
+    GetSubSub,
+    PutSubSub,
+    DeleteSubSub
 } from '../controllers/rubricas.controller';
 
 const router = express.Router();
@@ -57,6 +61,26 @@ router.put(
 router.delete(
     ENVIROMENT.ROUTER_MAIN_MODULES.RUBRICAS.ACTIONS.DELETE_SUB,
     DeleteSub
+);
+
+router.post(
+    ENVIROMENT.ROUTER_MAIN_MODULES.RUBRICAS.ACTIONS.POST_SUB_SUB,
+    PostSubSub
+);
+
+router.get(
+    ENVIROMENT.ROUTER_MAIN_MODULES.RUBRICAS.ACTIONS.GET_SUB_SUB,
+    GetSubSub
+);
+
+router.put(
+    ENVIROMENT.ROUTER_MAIN_MODULES.RUBRICAS.ACTIONS.PUT_SUB_SUB,
+    PutSubSub
+);
+
+router.delete(
+    ENVIROMENT.ROUTER_MAIN_MODULES.RUBRICAS.ACTIONS.DELETE_SUB_SUB,
+    DeleteSubSub
 );
 
 module.exports = router;
