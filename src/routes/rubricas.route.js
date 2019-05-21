@@ -73,14 +73,4 @@ router.get(
     GetSubSub
 );
 
-router.put(
-    ENVIROMENT.ROUTER_MAIN_MODULES.RUBRICAS.ACTIONS.PUT_SUB_SUB,
-    PutSubSub
-);
-
-router.delete(
-    ENVIROMENT.ROUTER_MAIN_MODULES.RUBRICAS.ACTIONS.DELETE_SUB_SUB,
-    DeleteSubSub
-);
-
 module.exports = router;

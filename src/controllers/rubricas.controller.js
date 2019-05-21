@@ -72,7 +72,7 @@ exports.GetSubSub = async (req,res) => {
         IdRubrica: req.params.id, 'eva_cat_rubricas_criterios_AS.IdCriterioRubrica': req.params.idSub, 'eva_cat_rubricas_criterios_AS.eva_nivel_dominio_criterio_rubricas_AS.IdNivelDominio': req.params.idSubSub
     });
 };
-
+/*
 exports.PutSubSub = async (req,res) => {
     PUT(res,bd,name[0],{
         IdRubrica: req.params.id, 'eva_cat_rubricas_criterios_AS.IdCriterioRubrica': req.params.idSub, 'eva_cat_rubricas_criterios_AS.eva_nivel_dominio_criterio_rubricas_AS.IdNivelDominio': req.params.idSubSub
@@ -89,4 +89,4 @@ exports.DeleteSubSub = async (req,res) => {
     {   
         $pull: {eva_cat_rubricas_criterios_AS:{eva_nivel_dominio_criterio_rubricas_AS:{IdNivelDominio: req.params.idSubSub}}}
     })
-};
+};*/

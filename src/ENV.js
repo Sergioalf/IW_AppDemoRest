@@ -161,9 +161,7 @@ export const ENVIROMENT = {
                 PUT_SUB: '/sub/:id/:idSub',
                 DELETE_SUB: '/sub/:id/:idSub',
                 POST_SUB_SUB: '/sub/sub/:id/:idSub',
-                GET_SUB_SUB: '/sub/sub/:id/:idSub/:idSubSub',
-                PUT_SUB_SUB: '/sub/sub/:id/:idSub/:idSubSub',
-                DELETE_SUB_SUB: '/sub/sub/:id/:idSub/:idSubSub'
+                GET_SUB_SUB: '/sub/sub/:id/:idSub/:idSubSub'
             }
         },
         CARRERAS: {
